@@ -1,0 +1,1523 @@
+/* ==========================================================================
+   1. Global Styles & Variables
+   ========================================================================== */
+
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --primary-color: #007bff;
+    --primary-color-dark: #0056b3;
+    --text-color: #333;
+    --text-color-light: #666;
+    --background-color: #f4f4f4;
+    --surface-color: #fff;
+    --border-color: #ddd;
+    --border-color-light: #ccc;
+    --hover-color: #e9ecef;
+    --font-family: Arial, sans-serif;
+    --border-radius: 5px; 
+    --header-height: 110px; /* Changed from 90px to make the logo and header bigger */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding-top: var(--header-height); /* Prevent content from hiding behind fixed header */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* ==========================================================================
+   2. Header & Logo
+   ========================================================================== */
+header {
+    position: fixed; /* Make header sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 50px;
+    gap: 20px;
+    background-color: var(--surface-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Add shadow to fixed header */
+    height: var(--header-height);
+    z-index: 1100; /* Ensure header is above other content */
+}
+
+.logo img {
+    height: calc(var(--header-height) - 20px); /* Match header padding */
+}
+
+.logo {
+    flex-shrink: 0; /* Prevent logo from shrinking on smaller screens */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+}
+
+/* ==========================================================================
+   3. Navigation
+   ========================================================================== */
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 20px 15px;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+nav ul li a:hover {
+    background-color: var(--hover-color);
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    border-radius: var(--border-radius);
+    margin-left: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-us-btn a:hover, .nav-button:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px); /* होवर पर बटन को थोड़ा ऊपर उठाएं */
+}
+
+/* Dropdown Arrow Indicator */
+.dropdown > a::after {
+    content: '\f107'; /* Font Awesome down arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 8px;
+    font-size: 0.8em;
+    vertical-align: middle;
+}
+
+/* Arrow for sub-sub-menus */
+nav ul ul .dropdown > a::after {
+    content: '\f105'; /* Font Awesome right arrow */
+    float: right;
+    margin-top: 3px;
+}
+
+/* Dropdown Menu */
+nav ul ul {
+    display: none;
+    position: absolute;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add subtle shadow */
+    min-width: 200px;
+    z-index: 1000;
+}
+
+nav ul ul li {
+    width: 100%;
+}
+
+nav ul ul ul {
+    top: 0;
+    left: 100%;
+}
+
+/* ==========================================================================
+   4. Search Container
+   ========================================================================== */
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Pushes search to the right */
+    border: 1px solid var(--border-color-light);
+    border-radius: var(--border-radius);
+    background-color: var(--surface-color);
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-link {
+    text-decoration: none;
+    color: var(--text-color-light);
+}
+
+.search-icon {
+    margin-left: auto;
+    padding-left: 10px;
+}
+/* Language Switcher */
+.language-switcher-container {
+    margin-left: 15px; /* Space from search bar */
+}
+
+.language-switcher-container select {
+    padding: 8px;
+    border: 1px solid var(--border-color-light);
+    border-radius: var(--border-radius);
+    background-color: var(--surface-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* ==========================================================================
+   5. Carousel
+   ========================================================================== */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* ==========================================================================
+   6. Skill Programs Section
+   ========================================================================== */
+.skill-programs {
+    padding: 60px 0; /* Increased padding for more whitespace */
+    background-color: #ffffff; /* A clean white background for the section */
+    border-top: 1px solid #e7e7e7; /* Subtle separator line */
+    border-bottom: 1px solid #e7e7e7; /* Subtle separator line */
+}
+
+.container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px; /* Increased bottom margin */
+}
+
+.section-title h2 {
+    font-size: 2.8em; /* Slightly larger font size for the main heading */
+    margin-bottom: 15px;
+    color: #2c3e50; /* A darker, more professional color */
+    font-weight: 700;
+}
+
+.section-title p {
+    color: var(--text-color-light);
+    font-size: 1.1em;
+    line-height: 1.6;
+    max-width: 800px; /* Constrain the width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Section Title */
+@media (max-width: 768px) {
+    .section-title h2 {
+        font-size: 2.2em; /* Reduce heading size on mobile */
+    }
+}
+
+/* ==========================================================================
+   6.1. Tabs
+   ========================================================================== */
+
+.tabs-container .tab-buttons {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    margin: 5px;
+}
+
+.tab-link {
+    display: block;
+    padding: 12px 25px;
+    background: var(--hover-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.tab-button.active .tab-link,
+.tab-link:hover {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+}
+ 
+.tab-link h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+/* ==========================================================================
+   Course Navigation
+   ========================================================================== */
+
+.course-nav {
+    background-color: #34495e;
+    padding: 10px 0;
+    position: sticky;
+    top: var(--header-height); /* Stick below the main header */
+    z-index: 1000; /* Below main header, above content */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.course-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.course-nav ul li a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--surface-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+.course-nav ul li a:hover {
+    background-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Course Info Sections
+   ========================================================================== */
+
+.course-info-section {
+    background-color: var(--surface-color);
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    scroll-margin-top: 180px; /* Offset for both sticky headers */
+}
+
+.course-info-section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.tab-content-wrapper .tab-content {
+    display: none;
+}
+
+.tab-content-wrapper .tab-content.active {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch; /* Ensure items have same height */
+    gap: 20px;
+}
+
+/* ==========================================================================
+   Course Page - New Layout
+   ========================================================================== */
+
+.breadcrumb {
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    color: var(--text-color-light);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.course-content-area {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+}
+
+.course-main-title {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.course-content-area p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.enroll-section {
+    display: flex;
+    align-items: center;
+    background-color: #e9f4ff; /* Light blue background */
+    padding: 25px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--primary-color);
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.enroll-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+
+.enroll-text {
+    flex-grow: 1;
+}
+
+.enroll-text h3 {
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+}
+
+.enroll-text p {
+    margin: 0;
+    color: var(--text-color-light);
+}
+
+/* ==========================================================================
+   Course Info Grid (for rscit.html)
+   ========================================================================== */
+
+.course-info-grid {
+    padding: 40px 0;
+}
+
+.course-info-grid .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.info-card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.info-card:hover { 
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    background-color: #f8f9fa; /* Subtle background color change on hover */
+}
+
+.info-card-icon {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.info-card:hover .info-card-icon {
+    transform: scale(1.2); /* Scale up the icon on hover */
+}
+
+.info-card h3 {
+    font-size: 1.25em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+/* ==========================================================================
+   6.2. Course Cards
+   ========================================================================== */
+
+.course-card {
+    background: var(--surface-color);
+    border: 1px solid #e9ecef; /* Lighter border */
+    border-left: 4px solid var(--primary-color); /* Accent border */
+    padding: 25px;
+    border-radius: 10px; /* Slightly more rounded corners */
+    flex-basis: 360px; /* Suggest a width */
+    flex-grow: 1; /* Allow cards to grow */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07); /* Softer shadow */
+    min-height: 400px; /* Set a minimum height for all cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Add transition for smooth effect */
+}
+
+.course-card:hover {
+    transform: translateY(-12px); /* Lift the card up more on hover */
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15); /* Enhance shadow on hover */
+    border-left-color: var(--primary-color-dark);
+}
+
+.course-card__content {
+    flex-grow: 1; /* Ensures content area takes up available space */
+}
+
+.course-card__content p,
+.course-card__content p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.course-card__content ul,
+.course-card__content ul {
+    list-style-position: inside;
+    padding-left: 5px; /* Indent list items slightly */
+    list-style-type: none; /* Remove default bullets */
+}
+
+.course-card__content li,
+.course-card__content li {
+    margin-bottom: 8px;
+    color: var(--text-color-light); /* Slightly lighter text for list items */
+    font-weight: bold;
+    position: relative;
+    padding-left: 20px; /* Space for the custom icon */
+}
+
+.course-card__content li::before {
+    content: '✓'; /* Custom checkmark icon */
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: 900;
+}
+
+.course-card__title {
+    font-size: 1.3em;
+    font-weight: 700; /* Bolder title */
+    margin-bottom: 15px;
+    text-align: center;
+    color: #34495e; /* Darker, more professional title color */
+}
+
+.card-footer {
+    text-align: center;
+    margin-top: auto; /* Push button to the bottom of the card */
+    padding-top: 20px; /* Add some space above the button */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px; /* Larger button padding */
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-color-dark)); /* Gradient background */
+    color: var(--surface-color);
+    text-decoration: none;
+    border-radius: 50px; /* Pill-shaped button */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Button shadow */
+    border: none;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+ 
+.btn .btn__text {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.indexbanner img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   7. Third-Party Overrides (e.g., Owl Carousel)
+   ========================================================================== */
+
+/* Hide owl navigation as it's disabled */
+.owl-nav.disabled, .owl-dots.disabled {
+    display: none;
+}
+
+/* ==========================================================================
+   8. Utility Classes
+   ========================================================================== */
+
+a[href=""], a:not([href]) {
+    cursor: pointer;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   9. Responsive Design (Media Queries)
+   ========================================================================== */
+
+.hamburger {
+    display: none; /* Hide by default on desktop */
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    order: 3; /* Order in flex layout */
+    margin-left: 15px;
+}
+
+/* --- For Tablets and smaller devices --- */
+@media (max-width: 1200px) {
+    header {
+        flex-wrap: wrap; /* Allow items to wrap */
+        padding: 10px 20px;
+        height: auto;
+    }
+
+    nav {
+        order: 4; /* Make nav appear last */
+        width: 100%;
+        max-height: calc(100vh - var(--header-height)); /* Limit nav height */
+        display: none; /* Hide nav by default on mobile */
+    }
+
+    nav.active {
+        display: block; /* Show nav when active */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        width: 100%;
+    }
+
+    nav ul li a {
+        padding: 15px;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    nav ul ul {
+        position: static; /* Submenus appear inline */
+        border: none;
+        box-shadow: none;
+        display: none; /* Hide submenus by default on mobile */
+        padding-left: 20px;
+        background-color: #e9ecef; /* Add a light background to distinguish submenus */
+    }
+
+    /* Class to show the submenu when clicked */
+    nav ul ul.submenu-active {
+        display: block;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger button */
+    }
+
+    .logo img {
+        height: 60px; /* Adjust logo size for smaller headers */
+    }
+
+
+    .search-container {
+        margin-left: 0;
+        order: 2;
+        flex-grow: 1; /* Allow search to take available space */
+    }
+
+    .logo {
+        order: 1;
+    }
+
+    .language-switcher-container {
+        order: 5;
+    }
+
+    .nav-button {
+        order: 6;
+    }
+}
+
+/* --- For Mobile Phones --- */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .skill-programs {
+        padding: 40px 0; /* Reduce vertical padding on mobile */
+    }
+
+    .tab-link {
+        padding: 10px 15px; /* Reduce tab button padding */
+        font-size: 0.9em;
+    }
+
+
+    .course-card {
+        flex-basis: 100%; /* Make cards full width */
+    }
+}
+
+/* --- For Desktop hover effect --- */
+@media (min-width: 1200.1px) {
+    nav ul li:hover > ul {
+        display: block;
+    }
+}
+
+/* ==========================================================================
+   10. Footer
+   ========================================================================== */
+
+.site-footer {
+    background-color: #2c3e50; /* Dark blue-grey background */
+    color: #ecf0f1; /* Light grey text */
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.site-footer .container {
+    /* Reset padding for footer to use its own */
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.footer-widgets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.widget {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px; /* Add space between stacked widgets */
+}
+
+@media (max-width: 768px) {
+    .footer-widgets {
+        justify-content: flex-start; /* Align widgets to the start on mobile */
+    }
+}
+
+.widget h3 {
+    color: var(--surface-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color-dark);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: #34495e;
+    color: var(--surface-color);
+    text-decoration: none;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    border-top: 1px solid #34495e;
+    padding-top: 20px;
+}
+
+.map-container {
+    margin-top: 20px;
+}
+
+.widget .contact-info-details p a {
+    color: inherit; /* लिंक को पैरेंट टेक्स्ट का रंग विरासत में दें */
+    text-decoration: none; /* अंडरलाइन हटाएं */
+    display: flex; /* आइकन और टेक्स्ट को संरेखित करने के लिए */
+    align-items: flex-start; /* Align items to the start */
+    gap: 12px; /* आइकन और टेक्स्ट के बीच गैप */
+    transition: color 0.3s ease;
+}
+
+.widget .contact-info-details p a:hover {
+    color: var(--primary-color); /* होवर पर रंग बदलें */
+}
+
+.widget .contact-info-details p a:hover i {
+    color: var(--primary-color); /* होवर पर आइकन का रंग भी बदलें */
+}
+
+/* फ़ोन और ईमेल के लिए अलग से स्टाइल ताकि वे फ्लेक्स न हों */
+.widget .contact-info-details p > a:not([href*="google"]) {
+    display: inline;
+}
+
+.widget .contact-info-details .whatsapp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.widget .contact-info-details .whatsapp-link .fa-whatsapp {
+    color: #25D366; /* WhatsApp Green */
+}
+
+.footer-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #82c4ff; /* Lighter blue on hover */
+}
+/* ==========================================================================
+   11. Top Bar & Registration Form
+   ========================================================================== */
+
+.registration-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.registration-container.active {
+    display: flex; /* Shown when active */
+}
+
+.registration-form {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.registration-form h3 {
+    text-align: center;
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.registration-form input,
+.registration-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+/* ========================================= */
+/* ==  अतिरिक्त स्टाइल: स्टूडेंट रजिस्ट्रेशन फॉर्म  == */
+/* ========================================= */
+
+/* कंटेनर के लिए फेड-इन बैकग्राउंड */
+.registration-container.active {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+}
+
+/* फॉर्म के लिए स्लाइड-डाउन एनिमेशन */
+.registration-container.active .registration-form {
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Terms and Conditions Checkbox Styling */
+.terms-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.terms-container input[type="checkbox"] {
+    width: auto; /* Override the 100% width */
+    margin: 0;
+}
+
+.terms-container label {
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+}
+
+/* फॉर्म का नया स्टाइल */
+.registration-form {
+    background: linear-gradient(145deg, #ffffff, #f0f2f5);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 2.5rem;
+    border: 1px solid #e0e0e0;
+    width: 90%;
+    max-width: 500px;
+}
+
+.registration-form h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* इनपुट और सेलेक्ट फील्ड्स का स्टाइल */
+.registration-form input[type="text"],
+.registration-form input[type="tel"],
+.registration-form input[type="email"],
+.registration-form input[type="number"],
+.registration-form select {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.registration-form input:focus,
+.registration-form select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+/* कैप्चा सेक्शन का स्टाइल */
+.captcha-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.captcha-container #captcha-question {
+    font-weight: bold;
+    color: #555;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.captcha-container input[type="number"] {
+    flex-grow: 1;
+    width: auto; /* चौड़ाई को फ्लेक्स के अनुसार सेट होने दें */
+}
+
+#refresh-captcha-btn {
+    background: none;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#refresh-captcha-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+/* सबमिट बटन का स्टाइल */
+.registration-form .btn--primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 1rem;
+}
+
+.registration-form .btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* क्लोज बटन का स्टाइल */
+.registration-form .close-btn {
+    font-size: 2rem;
+    color: #888;
+}
+
+.registration-form .close-btn:hover {
+    color: #333;
+}
+
+/* ========================================= */
+/* ==  अतिरिक्त स्टाइल: धन्यवाद संदेश      == */
+/* ========================================= */
+
+.thank-you-message {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    animation: fadeInScale 0.5s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.thank-you-message .success-icon {
+    font-size: 60px;
+    color: #28a745; /* Green color for success */
+    margin-bottom: 20px;
+    animation: popIn 0.5s 0.2s ease-out forwards;
+    transform: scale(0);
+}
+
+@keyframes popIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+.thank-you-message h3 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0 0 10px 0;
+}
+
+.thank-you-message p {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 5px 0;
+}
+
+.thank-you-message .auto-close-text {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* ==========================================================================
+   12. Back to Top Button
+   ========================================================================== */
+
+.back-to-top-btn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1050;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.back-to-top-btn.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* ==========================================================================
+   13. Cookie Consent Banner
+   ========================================================================== */
+
+.cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2c3e50; /* Match footer background */
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    z-index: 1200; /* High z-index to be on top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.cookie-consent-banner.show {
+    transform: translateY(0);
+}
+
+.cookie-consent-banner p {
+    margin: 0;
+    text-align: center;
+}
+
+.cookie-consent-banner p a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.cookie-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s;
+    margin-left: 10px; /* Add some space between buttons */
+}
+
+.cookie-btn.decline {
+    background-color: #6c757d; /* Grey color for decline button */
+    color: white;
+}
+
+.cookie-btn:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* ==========================================================================
+   14. Why Choose Us Section
+   ========================================================================== */
+
+.why-choose-us {
+    padding: 60px 0;
+    background-color: var(--surface-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.feature-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.feature-item p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   15. Testimonials Section
+   ========================================================================== */
+
+.testimonials {
+    padding: 60px 0;
+    background-color: var(--background-color);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    border-left: 5px solid var(--primary-color);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '\f10d'; /* Font Awesome quote-left icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 2em;
+    color: var(--primary-color);
+    opacity: 0.1;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: right;
+}
+
+/* ==========================================================================
+   16. FAQ Section
+   ========================================================================== */
+
+.faq-section {
+    padding: 60px 0;
+    background-color: var(--surface-color);
+}
+
+.faq-accordion {
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    padding: 18px 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--hover-color);
+}
+
+.faq-question::after {
+    content: '\f078'; /* Font Awesome chevron-down */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active::after {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 25px;
+    background-color: #f9f9f9;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+.faq-answer.show {
+    max-height: 200px; /* Adjust as needed for content */
+    padding: 15px 25px;
+}
+
+/* ==========================================================================
+   17. Loading Spinner
+   ========================================================================== */
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   14. Why Choose Us Section
+   ========================================================================== */
+
+.why-choose-us {
+    padding: 60px 0;
+    background-color: var(--surface-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.feature-item h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.feature-item p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   15. Testimonials Section
+   ========================================================================== */
+
+.testimonials {
+    padding: 60px 0;
+    background-color: var(--background-color);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.testimonial-card {
+    background-color: var(--surface-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+    border-left: 5px solid var(--primary-color);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '\f10d'; /* Font Awesome quote-left icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    font-size: 2em;
+    color: var(--primary-color);
+    opacity: 0.1;
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--text-color-light);
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: right;
+}

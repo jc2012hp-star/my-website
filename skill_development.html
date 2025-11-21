@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Development Programs - JCC</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="JCC Logo">
+        </div>
+        <button class="hamburger">☰</button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="Index.html" data-lang-key="nav_home"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown"><a href="#" data-lang-key="nav_courses"><i class="fas fa-book-open"></i> Courses</a>
+                    <ul>
+                        <li class="dropdown"><a href="#" data-lang-key="nav_digital_literacy">Digital Literacy</a>
+                            <ul>
+                                <li><a href="rscit.html" data-lang-key="nav_rscit">RS-CIT</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" data-lang-key="nav_financial_accounting">Financial Accounting</a>
+                            <ul>
+                                <li><a href="rscfa.html" data-lang-key="nav_rscfa">RS-CFA</a></li>
+                                <li><a href="rscfa-tally.html" data-lang-key="nav_rscfa_tally">RS-CFA with Tally Certification</a></li>
+                                <li><a href="tally-executive.html" data-lang-key="nav_tally_executive">Tally Executive</a></li>
+                                <li><a href="tally-professional.html" data-lang-key="tally_pro_title">TallyProfessional</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" data-lang-key="nav_communication_skills">Communication Skills</a>
+                            <ul>
+                                <li><a href="spoken-english-basic.html" data-lang-key="nav_spoken_english_basic">Spoken English (Basic)</a></li>
+                                <li><a href="spoken-english-advanced.html" data-lang-key="nav_spoken_english_advanced">Spoken English (Advanced)</a></li>
+                                <li><a href="personality-development.html" data-lang-key="nav_personality_development">Personality Development</a></li>
+                                <li><a href="foreign-languages.html" data-lang-key="nav_foreign_languages">Foreign Languages</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" data-lang-key="nav_digital_marketing">Digital Marketing</a>
+                            <ul>
+                                <li><a href="dm-basic.html" data-lang-key="nav_dm_basic">Digital Marketing (Basic)</a></li>
+                                <li><a href="dm-advanced.html" data-lang-key="nav_dm_advanced">Digital Marketing (Advanced)</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" data-lang-key="nav_graphic_design">Graphic Design</a>
+                            <ul>
+                                <li><a href="dtp.html" data-lang-key="nav_dtp">DeskTop Publishing (DTP)</a></li>
+                                <li><a href="gd-basic.html" data-lang-key="nav_gd_basic">Graphic Designing (Basic)</a></li>
+                                <li><a href="gd-advanced.html" data-lang-key="nav_gd_advanced">Graphic Designing (Advanced)</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a href="#" data-lang-key="nav_python">Python Programming</a>
+                            <ul>
+                                <li><a href="python-basic.html" data-lang-key="nav_python_basic">Python Programming (Basic)</a></li>
+                                <li><a href="python-advanced.html" data-lang-key="nav_python_advanced">Python Programming (Advanced)</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#" data-lang-key="nav_office_skills">Office Skills</a>
+                            <ul>
+                                <li><a href="advanced-excel.html" data-lang-key="nav_advanced_excel">Advanced Excel</a></li>
+                                <li><a href="mos.html" data-lang-key="nav_mos">Microsoft Office Specialist</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" data-lang-key="nav_initiatives"><i class="fas fa-bullhorn"></i> Initiatives</a>
+                    <ul>
+                        <li><a href="#" data-lang-key="nav_career_coach">Career Coach</a></li>
+                        <li><a href="#" data-lang-key="nav_road_safety">Road Safety Awareness</a></li>
+                        <li><a href="#" data-lang-key="nav_placement_assistance">Placement Assistance</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" data-lang-key="nav_placements"><i class="fas fa-user-graduate"></i> Placements</a>
+                    <ul>
+                        <li><a href="#" data-lang-key="nav_placement_partners">Placement Partners</a></li>
+                        <li><a href="#" data-lang-key="nav_placement_process">Placement Process</a></li>
+                        <li><a href="#" data-lang-key="nav_student_testimonials">Student Testimonials</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#" data-lang-key="nav_media"><i class="fas fa-photo-video"></i> Media</a>
+                    <ul>
+                        <li><a href="#" data-lang-key="nav_events">Events</a></li>
+                        <li><a href="#" data-lang-key="nav_news">News</a></li>
+                        <li><a href="#" data-lang-key="nav_announcements">Announcements</a></li>
+                    </ul>
+                </li>
+                <li class="contact-us-btn"><a href="#contact-section" data-lang-key="nav_contact"><i class="fas fa-phone-alt"></i> Contact Us</a></li>
+            </ul>
+        </nav>
+        <a href="https://myrkcl.com/frmsearchitgk_new.php" target="_blank" class="search-container search-link">
+            <span data-lang-key="search_placeholder">Search RKCL Center (ITGK)</span>
+            <span class="search-icon">🔍</span>
+        </a>
+        <div class="language-switcher-container">
+            <select id="language-switcher">
+                <option value="en">English</option>
+                <option value="hi">हिन्दी</option>
+            </select>
+        </div>
+        <button id="open-reg-form-btn" class="nav-button" data-lang-key="register_now"><i class="fas fa-user-plus"></i> Register Now</button>
+    </header>
+    <div id="registration-container" class="registration-container">
+        <form id="student-registration-form" class="registration-form">
+            <button type="button" id="close-reg-form-btn" class="close-btn">&times;</button>
+            <h3 data-lang-key="reg_form_title">Student Registration</h3>
+            <input type="text" name="name" placeholder="Name (नाम) *" required>
+            <input type="text" name="village" placeholder="Village/City (गाँव/शहर) *" required>
+            <input type="tel" name="phone" placeholder="Phone Number (फ़ोन नंबर) *" required>
+            <input type="email" name="email" placeholder="Email (ईमेल) *" required>
+            <!-- Honeypot Field for spam prevention -->
+            <input type="text" name="website_url" style="display:none;">
+            <select name="course" required>
+                <option value="" disabled selected data-lang-key="select_course">-- Select a Course -- *</option>
+                <optgroup label="Digital Literacy">
+                    <option value="RS-CIT" data-lang-key="nav_rscit">RS-CIT</option>
+                </optgroup>
+                <optgroup label="Financial Accounting">
+                    <option value="RS-CFA" data-lang-key="nav_rscfa">RS-CFA</option>
+                    <option value="RS-CFA with Tally Certification" data-lang-key="nav_rscfa_tally">RS-CFA with Tally Certification</option>
+                    <option value="RKCL Certified Tally Executive" data-lang-key="nav_tally_executive">RKCL Certified Tally Executive</option>
+                    <option value="TallyProfessional" data-lang-key="tally_pro_title">TallyProfessional</option>
+                </optgroup>
+                <optgroup label="Communication Skills">
+                    <option value="Spoken English (Basic)" data-lang-key="nav_spoken_english_basic">Spoken English (Basic)</option>
+                    <option value="Spoken English (Advanced)" data-lang-key="nav_spoken_english_advanced">Spoken English (Advanced)</option>
+                    <option value="Personality Development" data-lang-key="nav_personality_development">Personality Development</option>
+                </optgroup>
+                <optgroup label="Digital Marketing">
+                    <option value="Digital Marketing (Basic)" data-lang-key="nav_dm_basic">Digital Marketing (Basic)</option>
+                </optgroup>
+                <optgroup label="Graphic & Web Designing">
+                    <option value="DeskTop Publishing (DTP)" data-lang-key="nav_dtp">DeskTop Publishing (DTP)</option>
+                    <option value="Graphic Designing (Basic)" data-lang-key="nav_gd_basic">Graphic Designing (Basic)</option>
+                    <option value="Web Development using React" data-lang-key="react_title">Web Development using React</option>
+                </optgroup>
+                <optgroup label="Python Programming">
+                    <option value="Python Programming (Basic)" data-lang-key="nav_python_basic">Python Programming (Basic)</option>
+                    <option value="Python Programming (Advanced)" data-lang-key="nav_python_advanced">Python Programming (Advanced)</option>
+                </optgroup>
+                <optgroup label="Office Skills">
+                    <option value="Advanced Excel" data-lang-key="nav_advanced_excel">Advanced Excel</option>
+                    <option value="Microsoft Office Specialist" data-lang-key="nav_mos">Microsoft Office Specialist</option>
+                </optgroup>
+            </select>
+            <div class="terms-container">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">
+                    <span data-lang-key="terms_agree">I agree to the</span>
+                    <a href="terms.html" target="_blank" data-lang-key="terms_link">Terms and Conditions</a>*
+                </label>
+            </select>
+            <div class="captcha-container">
+                <span id="captcha-question"></span>
+                <input type="number" name="captcha" placeholder="Answer *" required>
+                <button type="button" id="refresh-captcha-btn">Refresh</button>
+            </div>
+            <button type="submit" class="btn btn--primary" data-lang-key="submit_reg">Submit Registration</button>
+        </form>
+        <div id="thank-you-message" class="thank-you-message">
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3 data-lang-key="thank_you_title">Thank You!</h3>
+            <p data-lang-key="thank_you_text">Your registration has been submitted successfully.</p>
+            <p data-lang-key="thank_you_contact">We will contact you shortly.</p>
+            <p class="correction-info" data-lang-key="thank_you_correction">For any corrections, please contact us.</p>
+            <p class="auto-close-text" data-lang-key="auto_close_text">This will close in a moment.</p>
+        </div>
+    </div>
+    <section class="skill-programs">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2 class="mb-2">Skill Development Programs</h2>
+                        <p>RKCL provides best-in-class cutting edge job oriented courses across various skills like <br> Digital Literacy & Financial Accounting, Communication Skills, Digital Marketing, Graphic Designing, Web Development & Office Skills</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="tabs-container">
+                    <ul class="tab-buttons clearfix">
+                        <li data-tab="#tab-digital-literacy" class="tab-button active">
+                            <a class="tab-link">
+                                <h3>Digital Literacy</h3>
+                            </a>
+                        </li>
+                        <li data-tab="#tab-financial-accounting" class="tab-button">
+                            <a class="tab-link">
+                                <h3>Financial Accounting</h3>
+                            </a>
+                        </li>
+                        <li data-tab="#tab-communication-skills" class="tab-button">
+                            <a class="tab-link">
+                                <h3>Communication Skills</h3>
+                            </a>
+                        </li>
+                        <li data-tab="#tab-digital-marketing" class="tab-button">
+                            <a class="tab-link">
+                                <h3>Digital Marketing</h3>
+                            </a>
+                        </li>
+                        <li data-tab="#tab-graphic-designing" class="tab-button">
+                            <a class="tab-link">
+                                <h3>Graphic Designing</h3>
+                            </a>
+                        </li>
+                        <li data-tab="#tab-web-development" class="tab-button">
+                            <a class="tab-link">
+                                <h3>Web Development</h3>
+                            </a>
+                        </li>
+                        <li data-tab="#tab-office-skills" class="tab-button">
+                            <a class="tab-link">
+                                <h3>Office Skills</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content-wrapper">
+                    <div class="tab-content active" id="tab-digital-literacy">
+                        <div class="course-card">
+                            <div class="row">
+                                <div class="course-card__content">
+                                    <div class="course-card__title text-center" data-lang-key="rscit_title"> RS-CIT </div>
+                                    <p data-lang-key="rscit_desc_short"></p>
+                                        <div class="card-footer text-center">
+                                            <div class="mt-2"> <a class="btn btn--primary" href="rscit.html">
+                                                    <span class="btn__text">
+                                                        <i class="icon-right-arrow-1"></i> See More
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-content" id="tab-financial-accounting">
+                        <div class="course-card">
+                            <div class="course-card__content">
+                                <div class="course-card__title text-center" data-lang-key="rscfa_title"> RS-CFA </div>
+                                <p data-lang-key="rscfa_desc_short"></p>
+                                        <div class="card-footer text-center">
+                                            <div class="mt-2">
+                                                <a class="btn btn--primary" href="rscfa.html">
+                                                    <span class="btn__text">
+                                                        <i class="icon-right-arrow-1"></i> See More </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        <div class="course-card">
+                            <div class="course-card__content">                           
+                                <div class="course-card__title text-center" data-lang-key="rscfa_tally_title"> RS-CFA with Tally Certification </div>
+                                <p data-lang-key="rscfa_tally_desc_short"></p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="mt-2"> <a class="btn btn--primary" href="rscfa-tally.html"> 
+                                        <span class="btn__text">
+                                            <i class="icon-right-arrow-1"></i> See More </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-card__content">                           
+                                <div class="course-card__title text-center" data-lang-key="tally_executive_title"> RKCL Certified Tally Executive </div>
+                                <p data-lang-key="tally_exec_desc_short"></p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <div class="mt-2">
+                                    <a class="btn btn--primary" href="tally-executive.html">
+                                        <span class="btn__text">
+                                            <i class="icon-right-arrow-1"></i> See More </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-card">
+                            <div class="course-card__content">
+                                <div class="course-card__title text-center" data-lang-key="tally_pro_title"> TallyProfessional </div>
+                                <p data-lang-key="tally_pro_desc_short"></p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <a class="btn btn--primary" href="tally-professional.html">
+                                    <span class="btn__text" data-lang-key="see_more">
+                                        <i class="icon-right-arrow-1"></i> See More </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+        <div class="tab-content" id="tab-communication-skills">
+            <div class="course-card">
+                <div class="course-card__content">
+                            <div class="course-card__title text-center" data-lang-key="seb_title"> Spoken English (Basic) </div>
+                            <p data-lang-key="seb_desc"></p>
+                </div>
+                <div class="card-footer text-center">
+                                    <a class="btn btn--primary" href="spoken-english-basic.html">
+                                        <span class="btn__text" data-lang-key="see_more">
+                                            <i class="icon-right-arrow-1"></i> See More </span>
+                                    </a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__content">
+                            <div class="course-card__title text-center" data-lang-key="sea_title"> Spoken English (Advanced) </div>
+                            <p data-lang-key="sea_desc"></p>
+                </div>
+                <div class="card-footer text-center">
+                                    <a class="btn btn--primary" href="spoken-english-advanced.html">
+                                        <span class="btn__text" data-lang-key="see_more">
+                                            <i class="icon-right-arrow-1"></i> See More </span>
+                                    </a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__content">
+                            <div class="course-card__title text-center" data-lang-key="nav_personality_development"> Personality Development </div>
+                            <p data-lang-key="pd_desc"></p>
+                </div>
+                <div class="card-footer text-center">
+                                    <a class="btn btn--primary" href="personality-development.html">
+                                        <span class="btn__text" data-lang-key="see_more">
+                                            <i class="icon-right-arrow-1"></i> See More </span>
+                                    </a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__content">
+                            <div class="course-card__title text-center" data-lang-key="nav_foreign_languages"> Foreign Languages </div>
+                            <p data-lang-key="fl_desc"></p>
+                </div>
+                <div class="card-footer text-center">
+                                    <a class="btn btn--primary" href="foreign-languages.html">
+                                        <span class="btn__text" data-lang-key="see_more">
+                                            <i class="icon-right-arrow-1"></i> See More </span>
+                                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="tab-digital-marketing">
+            <div class="course-card">
+                <div class="course-card__content">
+                            <div class="course-card__title text-center" data-lang-key="dmb_title"> Digital Marketing (Basic) </div>
+                            <p data-lang-key="dmb_desc"></p>
+                </div>
+                <div class="card-footer text-center">
+                                    <a class="btn btn--primary" href="dm-basic.html">
+                                        <span class="btn__text" data-lang-key="see_more">
+                                            <i class="icon-right-arrow-1"></i> See More </span>
+                                    </a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__content">
+                        <div class="course-card__title text-center" data-lang-key="dma_title"> Digital Marketing (Advanced) </div>
+                        <p data-lang-key="dma_desc"></p>
+                        <p></p>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn--primary" href="dm-advanced.html">
+                        <span class="btn__text" data-lang-key="see_more">
+                            <i class="icon-right-arrow-1"></i> See More </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-content" id="tab-graphic-designing">
+            <div class="course-card">
+                <div class="course-card__content">
+                    <div class="course-card__title text-center" data-lang-key="dtp_title"> Desktop Publishing (DTP) </div>
+                    <p data-lang-key="dtp_desc_short"></p>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn--primary" href="dtp.html">
+                        <span class="btn__text" data-lang-key="see_more">
+                            <i class="icon-right-arrow-1"></i> See More </span>
+                    </a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__content">
+                        <div class="course-card__title text-center" data-lang-key="gdb_title"> Graphic Designing - Basic </div>
+                        <p data-lang-key="gdb_desc_short"></p>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn--primary" href="gd-basic.html">
+                        <span class="btn__text" data-lang-key="see_more">
+                            <i class="icon-right-arrow-1"></i> See More </span>
+                    </a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__content">
+                        <div class="course-card__title text-center" data-lang-key="gda_title"> Graphic Designing – Advanced </div>
+                        <p data-lang-key="gda_desc_short"></p>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn--primary" href="gd-advanced.html">
+                        <span class="btn__text" data-lang-key="see_more">
+                            <i class="icon-right-arrow-1"></i> See More </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+                <div class="tab-content" id="tab-web-development">
+                    <div class="course-card">
+                        <div class="course-card__content">
+                                        <div class="course-card__title text-center" data-lang-key="react_title"> Web Development using React </div>
+                                        <p data-lang-key="react_desc_short"></p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a class="btn btn--primary" href="react-dev.html">
+                                <span class="btn__text" data-lang-key="see_more">
+                                    <i class="icon-right-arrow-1"></i> See More </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card__content">
+                                <div class="course-card__title text-center" data-lang-key="php_title"> Web Development using PHP </div>
+                                <p data-lang-key="php_desc_short"></p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a class="btn btn--primary" href="php-dev.html">
+                                <span class="btn__text" data-lang-key="see_more">
+                                    <i class="icon-right-arrow-1"></i> See More </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card__content">
+                                <div class="course-card__title text-center" data-lang-key="python_adv_title"> Advanced Python Programming </div>
+                                <p data-lang-key="python_adv_desc_short"></p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a class="btn btn--primary" href="php-dev.html">
+                                <span class="btn__text" data-lang-key="see_more">
+                                    <i class="icon-right-arrow-1"></i> See More </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content" id="tab-office-skills">
+            <div class="course-card">
+                <div class="course-card__content">
+                            <div class="course-card__title text-center" data-lang-key="excel_title"> Advanced Excel </div>
+                            <p></p>
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn--primary" href="advanced-excel.html">
+                        <span class="btn__text" data-lang-key="see_more">
+                            <i class="icon-right-arrow-1"></i> See More </span>
+                    </a>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-card__content">
+                        <div class="course-card__title text-center" data-lang-key="mos_title"> Microsoft Office Specialist </div>
+                        <p></p>
+                </div>
+                <div class="card-footer text-center">
+                            <a class="btn btn--primary" href="mos.html">
+                        <span class="btn__text" data-lang-key="see_more">
+                            <i class="icon-right-arrow-1"></i> See More </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+                </div>
+            </div>
+    </section>
+    <footer id="contact-section" class="site-footer">
+        <div class="container">
+            <div class="footer-widgets">
+                <div class="widget">
+                    <h3 data-lang-key="footer_about">JCC के बारे में</h3>
+                    <p data-lang-key="footer_about_desc">जग्दम्बा कंप्यूटर्स एंड कॉम्पिटिशन क्लासेस (JCC) की स्थापना 2012 में युवाओं को गुणवत्तापूर्ण कंप्यूटर शिक्षा और कौशल विकास कार्यक्रम प्रदान करने के मिशन के साथ की गई थी। हमारा लक्ष्य छात्रों को आज के प्रतिस्पर्धी नौकरी बाजार के लिए तैयार करना है।</p>
+                </div>
+                <div class="widget">
+                    <h3 data-lang-key="footer_contact">Contact Us</h3>
+                    <div class="contact-info-details">
+                        <p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Jagdamba+Computers+%26+Competition+Classes,Vinay+Palace,Sojat+Road" target="_blank">
+                                <i class="fas fa-map-marker-alt"></i> 
+                                <span>पता: Jagdamba Computers & Competition Classes, Vinay Palace, 2nd Floor, Bagdi Road, Sojat Road</span>
+                            </a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i> संपर्क: <a href="tel:9680852789">9680852789</a> | 
+                            <a href="https://wa.me/917665854414" target="_blank" class="whatsapp-link"><i class="fab fa-whatsapp"></i> 7665854414</a>
+                        </p>
+                        <p><i class="fas fa-envelope"></i> ईमेल: <a href="mailto:jc2012hp@gmail.com">jc2012hp@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="widget">
+                    <h3 data-lang-key="footer_follow">Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JCC. All Rights Reserved. |
+                    <a href="privacy-policy.html" class="footer-link" data-lang-key="nav_privacy_policy">Privacy Policy</a>
+                </p>
+
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
